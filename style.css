@@ -2600,4 +2600,280 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+/* ==================================================
+   MOBILE RESPONSIVE FIX - FINAL CLEAN VERSION
+   PASTE AT VERY BOTTOM - REPLACE OLD CODE
+   ================================================== */
+
+@media (max-width: 768px) {
+    
+    /* 1. Body + Scroll Fix */
+    html, body {
+        overflow-x: hidden !important;
+        max-width: 100vw !important;
+        padding-top: 110px !important;
+    }
+
+    /* 2. Navbar Fix */
+    .navbar {
+        position: fixed !important;
+        top: 10px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 95% !important;
+        height: auto !important;
+        min-height: 70px !important;
+        padding: 12px 15px !important;
+        flex-direction: column !important;
+        gap: 8px !important;
+        border-radius: 20px !important;
+        z-index: 9999 !important;
+    }
+    
+    .navbar::before,
+    .navbar::after {
+        display: none !important;
+    }
+
+    .logo {
+        font-size: 1.4rem !important;
+        letter-spacing: 1px !important;
+        width: 100% !important;
+        text-align: center !important;
+        white-space: nowrap !important;
+    }
+
+    .nav-links {
+        width: 100% !important;
+        gap: 8px 10px !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        row-gap: 8px !important;
+    }
+
+    .nav-links a {
+        font-size: 0.85rem !important;
+        white-space: nowrap !important;
+        padding: 0 3px !important;
+    }
+
+    .resume-btn, #theme-toggle {
+        display: none !important;
+    }
+
+    /* 3. Hero Section */
+    .hero {
+        flex-direction: column-reverse !important;
+        min-height: auto !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+        padding: 40px 15px !important;
+        gap: 35px !important;
+        margin-top: 0 !important;
+        text-align: center !important;
+        overflow-x: hidden !important;
+    }
+
+    .hero-left {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 10px !important;
+    }
+
+    .hero-left h1 {
+        font-size: 2.2rem !important;
+        line-height: 1.2 !important;
+        word-wrap: break-word !important;
+        margin-bottom: 10px !important;
+    }
+
+    .hero-left h2 {
+        font-size: 1.3rem !important;
+        margin-bottom: 20px !important;
+    }
+
+    .hero-left p {
+        font-size: 0.95rem !important;
+        line-height: 1.7 !important;
+        width: 100% !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        text-align: center !important;
+        padding: 0 5px !important;
+    }
+
+    /* 4. Social Icons - 5 icons perfect alignment */
+    .social-links {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 10px !important;
+        margin: 25px 0 !important;
+        padding: 0 15px !important;
+        max-width: 320px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .social-links a {
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 1.1rem !important;
+        flex: 0 0 50px !important;
+    }
+
+    .social-icon {
+        width: 24px !important;
+        height: 24px !important;
+    }
+
+    /* 5. Hero Buttons */
+    .hero-buttons {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 12px !important;
+        flex-wrap: wrap !important;
+        margin-top: 20px !important;
+    }
+
+    .btn {
+        padding: 12px 24px !important;
+        font-size: 0.95rem !important;
+        min-width: 140px !important;
+        text-align: center !important;
+    }
+
+    .hero-circle {
+        width: 220px !important;
+        height: 220px !important;
+        margin: 0 auto !important;
+    }
+
+    .hero-circle img {
+        width: 200px !important;
+        height: 200px !important;
+    }
+
+    /* 6. Sections */
+    section {
+        padding: 60px 6% !important;
+    }
+
+    .section-title {
+        font-size: 2rem !important;
+        margin-bottom: 35px !important;
+    }
+
+    /* 7. Project Card */
+    .project-card {
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+
+    .project-image {
+        width: 100% !important;
+        height: 200px !important;
+    }
+
+    .project-content {
+        padding: 25px 20px !important;
+        text-align: center !important;
+    }
+
+    /* 8. Timeline */
+    .timeline::before {
+        left: 25px !important;
+    }
+
+    .timeline-item {
+        width: 100% !important;
+        left: 0 !important;
+        padding-left: 55px !important;
+        padding-right: 15px !important;
+    }
+
+    .timeline-item::before {
+        left: 15px !important;
+    }
+
+    /* 9. Contact Card */
+    .contact-info {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+        padding: 0 10px !important;
+    }
+
+    .contact-info-card {
+        padding: 20px 15px !important;
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 12px !important;
+    }
+
+    .contact-info-card span {
+        word-break: break-all !important;
+        font-size: 0.9rem !important;
+    }
+
+    .icon-box {
+        width: 60px !important;
+        height: 60px !important;
+        margin: 0 auto !important;
+    }
+
+    /* 10. Hide Cursor */
+    .cursor {
+        display: none !important;
+    }
+}
+
+/* Extra Small 360px */
+@media (max-width: 380px) {
+    body {
+        padding-top: 100px !important;
+    }
+
+    .logo {
+        font-size: 1.3rem !important;
+    }
+
+    .nav-links a {
+        font-size: 0.75rem !important;
+    }
+
+    .hero-left h1 {
+        font-size: 1.9rem !important;
+    }
+
+    .social-links {
+        gap: 8px !important;
+        max-width: 280px !important;
+    }
+    
+    .social-links a {
+        width: 45px !important;
+        height: 45px !important;
+        flex: 0 0 45px !important;
+    }
+    
+    .social-icon {
+        width: 20px !important;
+        height: 20px !important;
+    }
+    
+    .btn {
+        padding: 10px 18px !important;
+        font-size: 0.9rem !important;
+        min-width: 130px !important;
+    }
+
+    .hero-circle {
+        width: 180px !important;
+        height: 180px !important;
+    }
+}
+
+
 }
