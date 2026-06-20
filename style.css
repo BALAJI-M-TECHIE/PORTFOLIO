@@ -2875,5 +2875,46 @@ footer {
     }
 }
 
+/* ===========================
+   TEXT CUT FIX - ADD TO LAST
+=========================== */
+
+@media (max-width: 768px) {
+    
+    .hero-left h2 {
+        font-size: 1.2rem !important;
+        letter-spacing: 0.5px !important;
+        white-space: nowrap !important;
+        overflow: visible !important;
+        padding: 0 10px !important;
+        margin-bottom: 15px !important;
+    }
+
+    .hero-left p {
+        font-size: 0.9rem !important;
+        line-height: 1.8 !important;
+        padding: 0 15px !important;
+        max-width: 100% !important;
+        word-break: keep-all !important;
+        overflow-wrap: break-word !important;
+    }
+
+    .hero-left {
+        padding: 0 20px !important;
+    }
+}
+
+@media (max-width: 380px) {
+    .hero-left h2 {
+        font-size: 1.1rem !important;
+        letter-spacing: 0px !important;
+    }
+    
+    .hero-left p {
+        font-size: 0.85rem !important;
+        padding: 0 10px !important;
+    }
+}
+
 
 }
