@@ -2449,6 +2449,8 @@ footer {
     transition: all 0.4s ease;
 }
 
+
+
 .contact-info-card::before {
     content: "";
     position: absolute;
@@ -2470,42 +2472,63 @@ footer {
 
 /* ==========================================
    ICON BOX
-========================================== */
+=/* ICON BOX - APP STYLE SQUARE, NO OVERFLOW */
 .icon-box {
-  width: 75px;
-  height: 75px;
-  border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 12px; /* App icon mathiri 12px radius */
+  display: grid; /* FLEX REMOVE */
+  place-items: center; /* Perfect center */
   flex-shrink: 0;
   background: linear-gradient(135deg, #ff5ca8, #7b61ff);
   box-shadow: 0 0 20px rgba(255,92,168,0.45);
   overflow: hidden;
   backdrop-filter: blur(10px);
   transition: all 0.4s ease;
+  box-sizing: border-box;
+  padding: 0; /* Extra padding illa */
 }
 
-/* WhatsApp icon box - same pink gradient as others */
+/* WhatsApp icon box - same pink gradient */
 .whatsapp-gradient {
-     background: linear-gradient(135deg, #ff5ca8, #7b61ff);
-    box-shadow: 0 0 20px rgba(255, 92, 168, 0.45) !important;
+  background: linear-gradient(135deg, #ff5ca8, #7b61ff);
+  box-shadow: 0 0 20px rgba(255, 92, 168, 0.45) !important;
 }
 
-.icon-box img {
-  width: 45px;
-  height: 45px;
-  object-fit: contain;
-  opacity: 0.9;
+/* LOGO IMG - BOX KUULLA FIT AAGUM */
+.icon-box img,
+.icon-box svg {
+  width: 22px !important; /* 35px box la 22px dhan - 8px gap left+right */
+  height: 22px !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+  opacity: 0.95;
   filter: drop-shadow(0 0 6px rgba(255,92,168,0.6));
   transition: transform 0.3s ease, opacity 0.3s ease;
+  display: block; /* Inline gap remove */
 }
 
-.icon-box:hover img {
+.icon-box:hover img,
+.icon-box:hover svg {
   transform: scale(1.1);
   opacity: 1;
 }
 
+/* MOBILE - KONJAM SMALL */
+@media (max-width: 768px) {
+  .icon-box {
+    width: 42px !important;
+    height: 42px !important;
+    border-radius: 10px !important;
+  }
+  
+  .icon-box img,
+  .icon-box svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+}
 /* ==========================================
    CARD TEXT
 ========================================== */
@@ -2544,54 +2567,107 @@ footer {
 /* ==================================================
    MOBILE RESPONSIVE - FINAL CLEAN VERSION
 /* ==================================================
-   MOBILE RESPONSIVE - FINAL CLEAN VERSION
+ /* ==================================================
+   MOBILE RESPONSIVE v128 - FINAL FIX
+ /* ==================================================
+   MOBILE NAVBAR v130 - LOADER MUDINJA PIragu MATTUM SHOW
    ================================================== */
 
 @media (max-width: 768px) {
     
-    /* 1. Body + Navbar space */
-    html, body {
-        overflow-x: hidden !important;
-        padding-top: 95px !important;
-    }
-
-    /* 2. Navbar */
+    /* NAVBAR HIDE BY DEFAULT */
     .navbar {
         position: fixed !important;
         top: 10px !important;
         left: 50% !important;
-        transform: translateX(-50%) !important;
+        transform: translateX(-50%) translateY(-150%) !important; /* Mela full hide */
         width: 95% !important;
-        height: auto !important;
-        min-height: 70px !important;
+        min-height: 80px !important;
         padding: 12px 15px !important;
         flex-direction: column !important;
         gap: 8px !important;
         border-radius: 20px !important;
+        background: rgba(22, 8, 18, 0.8) !important;
+        backdrop-filter: blur(25px) !important;
+        border: 1px solid var(--glass-border) !important;
+        box-shadow: var(--shadow) !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important; /* Click aagathu */
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease !important;
         z-index: 9999 !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* LOADER MUDINJA + SCROLL PANNA CLASS */
+    .navbar.show {
+        transform: translateX(-50%) translateY(0) !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important; /* Click work aagum */
     }
 
     .logo {
         font-size: 1.4rem !important;
         text-align: center !important;
         width: 100% !important;
+        min-width: auto !important;
     }
 
     .nav-links {
-        gap: 8px 12px !important;
+        gap: 6px 10px !important;
         flex-wrap: wrap !important;
         justify-content: center !important;
     }
 
     .nav-links a {
-        font-size: 0.85rem !important;
+        font-size: 0.82rem !important;
+        padding: 4px 0 !important;
+        color: #fff !important;
+    }
+
+    /* Mobile active underline */
+    .nav-links a.active::after,
+    .nav-links a:hover::after {
+        height: 2.5px !important;
+        bottom: -4px !important;
+        background: #ff4f8b !important;
+        content: '' !important;
+        position: absolute !important;
+        width: 100% !important;
+        left: 0 !important;
+        border-radius: 2px !important;
+    }
+
+    .nav-links a {
+        position: relative !important;
     }
 
     .resume-btn, #theme-toggle {
         display: none !important;
     }
 
-    /* 3. Section Headlines - Font size + weight reduce pannen */
+    /* BODY PADDING - NAVBAR VARUM PO MATTUM */
+    body.navbar-active {
+        padding-top: 130px !important;
+    }
+
+    html.navbar-active {
+        scroll-padding-top: 130px !important;
+    }
+
+    section.navbar-active,
+    #home.navbar-active,
+    #education.navbar-active,
+    #skills.navbar-active,
+    #projects.navbar-active,
+    #achievements.navbar-active,
+    #profiles.navbar-active,
+    #contact.navbar-active {
+        scroll-margin-top: 130px !important;
+    }
+
+    /* Section Headlines */
     section h2,
     .section-title,
     .heading,
@@ -2604,16 +2680,20 @@ footer {
         word-break: break-word !important;
         white-space: normal !important;
         line-height: 1.3 !important;
-        overflow: visible !important;
     }
 
-    /* 4. Hero */
+    /* Hero */
     .hero {
         flex-direction: column-reverse !important;
         padding: 30px 20px !important;
-        gap: 30px !important;
-        min-height: auto !important;
-        overflow: visible !important;
+        margin-top: 0 !important;
+        gap: 35px !important;
+        min-height: 100vh !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .hero-left {
@@ -2625,12 +2705,14 @@ footer {
     .hero-left h3 {
         font-size: 1.1rem !important;
         margin: 0 0 8px 0 !important;
+        text-align: center !important;
     }
 
     .hero-left h1 {
         font-size: 2.2rem !important;
         margin: 5px 0 !important;
         line-height: 1.2 !important;
+        text-align: center !important;
     }
 
     .hero-left h2 {
@@ -2640,32 +2722,45 @@ footer {
         word-break: break-word !important;
         padding: 0 10px !important;
         line-height: 1.4 !important;
+        text-align: center !important;
     }
 
     .hero-left p {
         font-size: 0.95rem !important;
         line-height: 1.7 !important;
         padding: 0 10px !important;
-        word-break: break-word !important;
+        text-align: justify !important;
+        text-justify: inter-word !important;
+        hyphens: auto !important;
+        word-break: normal !important;
+        overflow-wrap: break-word !important;
+        white-space: normal !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
     }
 
-    /* 5. Photo */
+    /* Photo */
     .hero-circle {
         width: 220px !important;
         height: 220px !important;
         margin: 0 auto !important;
+        padding-top: 0 !important;
+        box-sizing: border-box !important;
     }
 
     .hero-circle img {
         width: 200px !important;
         height: 200px !important;
+        object-fit: cover !important;
+        border-radius: 50% !important;
     }
 
-    /* 6. Buttons */
+    /* Buttons */
     .hero-buttons {
         justify-content: center !important;
         gap: 12px !important;
         flex-wrap: wrap !important;
+        margin-top: 10px !important;
     }
 
     .btn {
@@ -2674,11 +2769,12 @@ footer {
         min-width: 140px !important;
     }
 
-    /* 7. Social icons */
+    /* Social icons */
     .social-links {
         justify-content: center !important;
         gap: 10px !important;
         flex-wrap: wrap !important;
+        margin-top: 15px !important;
     }
 
     .social-links a {
@@ -2686,16 +2782,15 @@ footer {
         height: 50px !important;
     }
 
-    /* 8. Tech Stack - FORCE 2 per row for ALL mobiles */
+    /* Tech Stack */
     .skills-grid, 
     .tech-stack,
     .achievements-grid {
         display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important; /* 2 per row confirm */
+        grid-template-columns: repeat(2, 1fr) !important;
         gap: 15px !important;
         padding: 0 15px !important;
         width: 100% !important;
-        max-width: 100% !important;
         box-sizing: border-box !important;
     }
 
@@ -2706,7 +2801,6 @@ footer {
         padding: 18px 12px !important;
         text-align: center !important;
         box-sizing: border-box !important;
-        word-break: break-word !important;
     }
 
     .skills-grid .skill-card img,
@@ -2730,70 +2824,115 @@ footer {
         line-height: 1.3 !important;
     }
 
-    /* 9. Contact Card - ONE LINE */
+    /* CONTACT CARD - GRID 1/3 LOGO + 2/3 TEXT */
     .contact-info {
+        display: grid !important;
         grid-template-columns: 1fr !important;
         gap: 15px !important;
-        padding: 0 10px !important;
-    }
-
-    .contact-info-card {
-        display: flex !important;
-        flex-direction: row !important;
-        align-items: center !important;
-        gap: 12px !important;
-        padding: 16px 12px !important;
+        padding: 0 15px !important;
         width: 100% !important;
         box-sizing: border-box !important;
     }
 
-    .icon-box {
-        width: 40px !important; /* Logo size kurachen */
-        height: 40px !important;
-        flex-shrink: 0 !important;
+    .contact-info-card {
+        width: 100% !important;
+        height: 85px !important;
+        display: grid !important;
+        grid-template-columns: 1fr 2fr !important;
+        align-items: center !important;
+        padding: 0 15px !important;
+        background: var(--bg-card) !important;
+        border: 1px solid var(--glass-border) !important;
+        border-radius: 18px !important;
+        backdrop-filter: blur(15px) !important;
+        box-sizing: border-box !important;
     }
 
-    .contact-info-card h4 {
-        font-size: 0.9rem !important;
-        margin: 0 0 2px 0 !important;
-        font-weight: 600 !important;
+    .icon-box {
+        width: 42px !important;
+        height: 42px !important;
+        border-radius: 10px !important;
+        background: linear-gradient(135deg, #ff5ca8, #7b61ff) !important;
+        box-shadow: 0 0 20px rgba(255,92,168,0.45) !important;
+        overflow: hidden !important;
+        position: relative !important;
+        display: block !important;
+        justify-self: center !important;
+        margin: 0 !important;
+    }
+
+    .icon-box img,
+    .icon-box svg {
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        width: 18px !important;
+        height: 18px !important;
+        max-width: 18px !important;
+        max-height: 18px !important;
+        object-fit: contain !important;
     }
 
     .contact-info-card div {
-        flex: 1 !important;
+        display: grid !important;
+        gap: 4px !important;
+        padding-left: 12px !important;
         min-width: 0 !important;
     }
 
-    .contact-info-card span {
-        font-size: 0.75rem !important; /* Font kurachu */
+    .contact-info-card h4 {
+        font-size: 0.95rem !important;
+        font-weight: 700 !important;
+        margin: 0 !important;
+        text-align: left !important;
+        color: var(--primary) !important;
+    }
+
+    .contact-info-card span,
+    .contact-info-card p,
+    .contact-info-card a {
+        font-size: 0.9rem !important;
+        font-weight: 500 !important;
         white-space: nowrap !important;
         overflow: hidden !important;
         text-overflow: ellipsis !important;
         display: block !important;
-        letter-spacing: -0.3px !important;
+        text-align: left !important;
+        margin: 0 !important;
+        color: var(--white) !important;
+    }
+
+    /* TYPING PINK LINE REMOVE */
+    #typing-text::after,
+    #typing-text::before,
+    .typing-cursor,
+    .typing-line {
+        display: none !important;
+        content: none !important;
+        border: none !important;
+    }
+
+    /* MOBILE CURSOR FIX */
+    .cursor,
+    .cursor-follower,
+    .custom-cursor,
+    [class*="cursor"] {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+    
+    body, a, button {
+        cursor: default !important;
     }
 }
 
 /* Extra Small 380px */
 @media (max-width: 380px) {
-    body {
-        padding-top: 90px !important;
-    }
-
-    section h2,
-    .section-title,
-    .heading,
-    h2 {
-        font-size: 1.4rem !important;
-        font-weight: 600 !important;
-    }
-
-    .hero-left h1 {
-        font-size: 1.9rem !important;
-    }
-
-    .hero-left h2 {
-        font-size: 1.1rem !important;
+    .hero {
+        padding: 25px 20px !important;
     }
 
     .hero-circle {
@@ -2801,40 +2940,49 @@ footer {
         height: 180px !important;
     }
 
-    .skills-grid,
-    .tech-stack,
-    .achievements-grid {
-        gap: 12px !important;
-        padding: 0 10px !important;
-    }
-    
-    .skills-grid .skill-card img,
-    .tech-stack .tech-card img {
-        width: 40px !important;
-        height: 40px !important;
-    }
-    
-    .skills-grid .skill-card h3,
-    .tech-stack .tech-card h3 {
-        font-size: 0.85rem !important;
-        font-weight: 600 !important;
+    .hero-circle img {
+        width: 160px !important;
+        height: 160px !important;
     }
 
-    .contact-info-card span {
-        font-size: 0.7rem !important;
-        letter-spacing: -0.3px !important;
+    .nav-links a.active::after,
+    .nav-links a:hover::after {
+        height: 2px !important;
+        bottom: -3px !important;
     }
     
     .contact-info-card {
-        padding: 14px 10px !important;
-        gap: 10px !important;
+        height: 80px !important;
     }
     
     .icon-box {
-        width: 35px !important;
-        height: 35px !important;
+        width: 40px !important;
+        height: 40px !important;
+        border-radius: 9px !important;
     }
+    
+    .icon-box img,
+    .icon-box svg {
+        width: 16px !important;
+        height: 16px !important;
+    }
+    
 
 
 }
 
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: #0a0a0f;
+}
+
+
+body {
+   /* background: radial-gradient(circle at 20% 50%, #000000 0%, #0a0a0f 100%); */
+   background: transparent;
+}
