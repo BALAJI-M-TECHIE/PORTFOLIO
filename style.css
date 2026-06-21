@@ -2543,7 +2543,8 @@ footer {
 }
 /* ==================================================
    MOBILE RESPONSIVE - FINAL CLEAN VERSION
-   ONLY ONE @media (max-width: 768px)
+/* ==================================================
+   MOBILE RESPONSIVE - FINAL CLEAN VERSION
    ================================================== */
 
 @media (max-width: 768px) {
@@ -2590,7 +2591,23 @@ footer {
         display: none !important;
     }
 
-    /* 3. Hero - Text mela, Photo keela */
+    /* 3. Section Headlines - Font size + weight reduce pannen */
+    section h2,
+    .section-title,
+    .heading,
+    h2 {
+        font-size: 1.6rem !important;
+        font-weight: 600 !important;
+        text-align: center !important;
+        margin: 0 0 25px 0 !important;
+        padding: 0 15px !important;
+        word-break: break-word !important;
+        white-space: normal !important;
+        line-height: 1.3 !important;
+        overflow: visible !important;
+    }
+
+    /* 4. Hero */
     .hero {
         flex-direction: column-reverse !important;
         padding: 30px 20px !important;
@@ -2608,7 +2625,6 @@ footer {
     .hero-left h3 {
         font-size: 1.1rem !important;
         margin: 0 0 8px 0 !important;
-        overflow: visible !important;
     }
 
     .hero-left h1 {
@@ -2617,12 +2633,10 @@ footer {
         line-height: 1.2 !important;
     }
 
-    /* Full Stack Developer cut aagathu */
     .hero-left h2 {
         font-size: 1.2rem !important;
         margin: 5px 0 15px 0 !important;
         white-space: normal !important;
-        overflow: visible !important;
         word-break: break-word !important;
         padding: 0 10px !important;
         line-height: 1.4 !important;
@@ -2635,7 +2649,7 @@ footer {
         word-break: break-word !important;
     }
 
-    /* 4. Photo circle */
+    /* 5. Photo */
     .hero-circle {
         width: 220px !important;
         height: 220px !important;
@@ -2647,7 +2661,7 @@ footer {
         height: 200px !important;
     }
 
-    /* 5. Buttons */
+    /* 6. Buttons */
     .hero-buttons {
         justify-content: center !important;
         gap: 12px !important;
@@ -2660,7 +2674,7 @@ footer {
         min-width: 140px !important;
     }
 
-    /* 6. Social icons */
+    /* 7. Social icons */
     .social-links {
         justify-content: center !important;
         gap: 10px !important;
@@ -2671,12 +2685,107 @@ footer {
         width: 50px !important;
         height: 50px !important;
     }
+
+    /* 8. Tech Stack - FORCE 2 per row for ALL mobiles */
+    .skills-grid, 
+    .tech-stack,
+    .achievements-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important; /* 2 per row confirm */
+        gap: 15px !important;
+        padding: 0 15px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .skills-grid .skill-card,
+    .tech-stack .tech-card,
+    .achievements-grid .achievement-card {
+        width: 100% !important;
+        padding: 18px 12px !important;
+        text-align: center !important;
+        box-sizing: border-box !important;
+        word-break: break-word !important;
+    }
+
+    .skills-grid .skill-card img,
+    .tech-stack .tech-card img,
+    .achievements-grid .achievement-card img {
+        width: 45px !important;
+        height: 45px !important;
+        margin: 0 auto 8px auto !important;
+        display: block !important;
+        object-fit: contain !important;
+    }
+
+    .skills-grid .skill-card h3,
+    .tech-stack .tech-card h3,
+    .achievements-grid .achievement-card h3 {
+        font-size: 0.9rem !important;
+        font-weight: 600 !important;
+        margin: 0 !important;
+        word-break: break-word !important;
+        white-space: normal !important;
+        line-height: 1.3 !important;
+    }
+
+    /* 9. Contact Card - ONE LINE */
+    .contact-info {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+        padding: 0 10px !important;
+    }
+
+    .contact-info-card {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 12px !important;
+        padding: 16px 12px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .icon-box {
+        width: 40px !important; /* Logo size kurachen */
+        height: 40px !important;
+        flex-shrink: 0 !important;
+    }
+
+    .contact-info-card h4 {
+        font-size: 0.9rem !important;
+        margin: 0 0 2px 0 !important;
+        font-weight: 600 !important;
+    }
+
+    .contact-info-card div {
+        flex: 1 !important;
+        min-width: 0 !important;
+    }
+
+    .contact-info-card span {
+        font-size: 0.75rem !important; /* Font kurachu */
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        display: block !important;
+        letter-spacing: -0.3px !important;
+    }
 }
 
 /* Extra Small 380px */
 @media (max-width: 380px) {
     body {
         padding-top: 90px !important;
+    }
+
+    section h2,
+    .section-title,
+    .heading,
+    h2 {
+        font-size: 1.4rem !important;
+        font-weight: 600 !important;
     }
 
     .hero-left h1 {
@@ -2692,83 +2801,6 @@ footer {
         height: 180px !important;
     }
 
-    /* 9. Contact Card */
-.contact-info {
-    grid-template-columns: 1fr !important;
-    gap: 15px !important;
-    padding: 0 15px !important;
-}
-
-.contact-info-card {
-    padding: 20px 15px !important;
-    flex-direction: column !important;
-    text-align: center !important;
-    gap: 12px !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    overflow: visible !important;
-}
-
-.contact-info-card h4 {
-    font-size: 1.1rem !important;
-    margin-bottom: 5px !important;
-}
-
-.contact-info-card span {
-    word-break: break-word !important; /* break-all remove panniten */
-    overflow-wrap: break-word !important;
-    font-size: 0.9rem !important;
-    padding: 0 5px !important;
-    max-width: 100% !important;
-    display: inline-block !important;
-}
-
-.icon-box {
-    width: 60px !important;
-    height: 60px !important;
-    margin: 0 auto !important;
-    flex-shrink: 0 !important;
-}
-
-/* 7. Tech Stack / Skills Grid - 2 per row */
-.skills-grid, 
-.tech-stack,
-.achievements-grid {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important; /* 2 per row */
-    gap: 15px !important;
-    padding: 0 15px !important;
-    width: 100% !important;
-    max-width: 100% !important;
-}
-
-.skills-grid .skill-card,
-.tech-stack .tech-card,
-.achievements-grid .achievement-card {
-    width: 100% !important;
-    padding: 20px 15px !important;
-    text-align: center !important;
-    box-sizing: border-box !important;
-}
-
-.skills-grid .skill-card img,
-.tech-stack .tech-card img,
-.achievements-grid .achievement-card img {
-    width: 45px !important;
-    height: 45px !important;
-    margin: 0 auto 10px auto !important;
-    display: block !important;
-}
-
-.skills-grid .skill-card h3,
-.tech-stack .tech-card h3 {
-    font-size: 0.95rem !important;
-    margin: 0 !important;
-    word-break: break-word !important;
-}
-
-/* Extra Small 380px - Konjam chinna icon */
-@media (max-width: 380px) {
     .skills-grid,
     .tech-stack,
     .achievements-grid {
@@ -2785,7 +2817,24 @@ footer {
     .skills-grid .skill-card h3,
     .tech-stack .tech-card h3 {
         font-size: 0.85rem !important;
+        font-weight: 600 !important;
     }
-}
+
+    .contact-info-card span {
+        font-size: 0.7rem !important;
+        letter-spacing: -0.3px !important;
+    }
+    
+    .contact-info-card {
+        padding: 14px 10px !important;
+        gap: 10px !important;
+    }
+    
+    .icon-box {
+        width: 35px !important;
+        height: 35px !important;
+    }
+
+
 }
 
