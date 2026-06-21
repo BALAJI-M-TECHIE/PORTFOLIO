@@ -2541,80 +2541,20 @@ footer {
     transform: translateY(-5px) scale(1.05);
     box-shadow: 0 0 40px rgba(255,92,168,0.7);
 }
-
-/* ==========================================
-   MOBILE
-========================================== */
-@media (max-width: 768px) {
-    .contact-title {
-        font-size: 2.4rem;
-    }
-
-    .contact-card {
-        padding: 40px 25px;
-    }
-
-    .contact-card h3 {
-        font-size: 1.7rem;
-    }
-
-    .contact-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .contact-btn {
-        width: 220px;
-    }
-
-    .build-btn {
-        width: 100%;
-        max-width: 300px;
-    }
-
-    .contact-info {
-        grid-template-columns: 1fr;
-    }
-
-    @media (max-width: 992px) {
-    .navbar {
-        width: 95%;
-        padding: 0 30px;
-    }
-    
-    .card {
-        padding: 30px;
-    }
-}
-
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        height: auto;
-        padding: 20px;
-        gap: 15px;
-    }
-    
-    .skills-grid,
-    .achievements-grid {
-        grid-template-columns: 1fr;
-    }
-}
 /* ==================================================
-   MOBILE RESPONSIVE FIX - FINAL CLEAN VERSION
-   PASTE AT VERY BOTTOM - REPLACE OLD CODE
+   MOBILE RESPONSIVE - FINAL CLEAN VERSION
+   ONLY ONE @media (max-width: 768px)
    ================================================== */
 
 @media (max-width: 768px) {
     
-    /* 1. Body + Scroll Fix */
+    /* 1. Body + Navbar space */
     html, body {
         overflow-x: hidden !important;
-        max-width: 100vw !important;
-        padding-top: 110px !important;
+        padding-top: 95px !important;
     }
 
-    /* 2. Navbar Fix */
+    /* 2. Navbar */
     .navbar {
         position: fixed !important;
         top: 10px !important;
@@ -2629,122 +2569,73 @@ footer {
         border-radius: 20px !important;
         z-index: 9999 !important;
     }
-    
-    .navbar::before,
-    .navbar::after {
-        display: none !important;
-    }
 
     .logo {
         font-size: 1.4rem !important;
-        letter-spacing: 1px !important;
-        width: 100% !important;
         text-align: center !important;
-        white-space: nowrap !important;
+        width: 100% !important;
     }
 
     .nav-links {
-        width: 100% !important;
-        gap: 8px 10px !important;
+        gap: 8px 12px !important;
         flex-wrap: wrap !important;
         justify-content: center !important;
-        row-gap: 8px !important;
     }
 
     .nav-links a {
         font-size: 0.85rem !important;
-        white-space: nowrap !important;
-        padding: 0 3px !important;
     }
 
     .resume-btn, #theme-toggle {
         display: none !important;
     }
 
-    /* 3. Hero Section */
+    /* 3. Hero - Text mela, Photo keela */
     .hero {
         flex-direction: column-reverse !important;
+        padding: 30px 20px !important;
+        gap: 30px !important;
         min-height: auto !important;
-        width: 100% !important;
-        max-width: 100vw !important;
-        padding: 40px 15px !important;
-        gap: 35px !important;
-        margin-top: 0 !important;
-        text-align: center !important;
-        overflow-x: hidden !important;
+        overflow: visible !important;
     }
 
     .hero-left {
         width: 100% !important;
-        max-width: 100% !important;
-        padding: 0 10px !important;
+        text-align: center !important;
+        padding: 0 !important;
+    }
+
+    .hero-left h3 {
+        font-size: 1.1rem !important;
+        margin: 0 0 8px 0 !important;
+        overflow: visible !important;
     }
 
     .hero-left h1 {
         font-size: 2.2rem !important;
+        margin: 5px 0 !important;
         line-height: 1.2 !important;
-        word-wrap: break-word !important;
-        margin-bottom: 10px !important;
     }
 
+    /* Full Stack Developer cut aagathu */
     .hero-left h2 {
-        font-size: 1.3rem !important;
-        margin-bottom: 20px !important;
+        font-size: 1.2rem !important;
+        margin: 5px 0 15px 0 !important;
+        white-space: normal !important;
+        overflow: visible !important;
+        word-break: break-word !important;
+        padding: 0 10px !important;
+        line-height: 1.4 !important;
     }
 
     .hero-left p {
         font-size: 0.95rem !important;
         line-height: 1.7 !important;
-        width: 100% !important;
-        word-wrap: break-word !important;
-        overflow-wrap: break-word !important;
-        text-align: center !important;
-        padding: 0 5px !important;
+        padding: 0 10px !important;
+        word-break: break-word !important;
     }
 
-    /* 4. Social Icons - 5 icons perfect alignment */
-    .social-links {
-        display: flex !important;
-        flex-wrap: wrap !important;
-        justify-content: center !important;
-        align-items: center !important;
-        gap: 10px !important;
-        margin: 25px 0 !important;
-        padding: 0 15px !important;
-        max-width: 320px !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-    }
-
-    .social-links a {
-        width: 50px !important;
-        height: 50px !important;
-        font-size: 1.1rem !important;
-        flex: 0 0 50px !important;
-    }
-
-    .social-icon {
-        width: 24px !important;
-        height: 24px !important;
-    }
-
-    /* 5. Hero Buttons */
-    .hero-buttons {
-        display: flex !important;
-        justify-content: center !important;
-        align-items: center !important;
-        gap: 12px !important;
-        flex-wrap: wrap !important;
-        margin-top: 20px !important;
-    }
-
-    .btn {
-        padding: 12px 24px !important;
-        font-size: 0.95rem !important;
-        min-width: 140px !important;
-        text-align: center !important;
-    }
-
+    /* 4. Photo circle */
     .hero-circle {
         width: 220px !important;
         height: 220px !important;
@@ -2756,214 +2647,145 @@ footer {
         height: 200px !important;
     }
 
-    /* 6. Sections */
-    section {
-        padding: 60px 6% !important;
-    }
-
-    .section-title {
-        font-size: 2rem !important;
-        margin-bottom: 35px !important;
-    }
-
-    /* 7. Project Card */
-    .project-card {
-        flex-direction: column !important;
-        width: 100% !important;
-    }
-
-    .project-image {
-        width: 100% !important;
-        height: 200px !important;
-    }
-
-    .project-content {
-        padding: 25px 20px !important;
-        text-align: center !important;
-    }
-
-    /* 8. Timeline */
-    .timeline::before {
-        left: 25px !important;
-    }
-
-    .timeline-item {
-        width: 100% !important;
-        left: 0 !important;
-        padding-left: 55px !important;
-        padding-right: 15px !important;
-    }
-
-    .timeline-item::before {
-        left: 15px !important;
-    }
-
-    /* 9. Contact Card */
-    .contact-info {
-        grid-template-columns: 1fr !important;
-        gap: 15px !important;
-        padding: 0 10px !important;
-    }
-
-    .contact-info-card {
-        padding: 20px 15px !important;
-        flex-direction: column !important;
-        text-align: center !important;
+    /* 5. Buttons */
+    .hero-buttons {
+        justify-content: center !important;
         gap: 12px !important;
+        flex-wrap: wrap !important;
     }
 
-    .contact-info-card span {
-        word-break: break-all !important;
-        font-size: 0.9rem !important;
+    .btn {
+        padding: 12px 24px !important;
+        font-size: 0.95rem !important;
+        min-width: 140px !important;
     }
 
-    .icon-box {
-        width: 60px !important;
-        height: 60px !important;
-        margin: 0 auto !important;
+    /* 6. Social icons */
+    .social-links {
+        justify-content: center !important;
+        gap: 10px !important;
+        flex-wrap: wrap !important;
     }
 
-    /* 10. Hide Cursor */
-    .cursor {
-        display: none !important;
+    .social-links a {
+        width: 50px !important;
+        height: 50px !important;
     }
 }
 
-/* Extra Small 360px */
+/* Extra Small 380px */
 @media (max-width: 380px) {
     body {
-        padding-top: 100px !important;
-    }
-
-    .logo {
-        font-size: 1.3rem !important;
-    }
-
-    .nav-links a {
-        font-size: 0.75rem !important;
+        padding-top: 90px !important;
     }
 
     .hero-left h1 {
         font-size: 1.9rem !important;
     }
 
-    .social-links {
-        gap: 8px !important;
-        max-width: 280px !important;
-    }
-    
-    .social-links a {
-        width: 45px !important;
-        height: 45px !important;
-        flex: 0 0 45px !important;
-    }
-    
-    .social-icon {
-        width: 20px !important;
-        height: 20px !important;
-    }
-    
-    .btn {
-        padding: 10px 18px !important;
-        font-size: 0.9rem !important;
-        min-width: 130px !important;
+    .hero-left h2 {
+        font-size: 1.1rem !important;
     }
 
     .hero-circle {
         width: 180px !important;
         height: 180px !important;
     }
+
+    /* 9. Contact Card */
+.contact-info {
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
+    padding: 0 15px !important;
 }
 
-/* ===========================
-   TEXT CUT FIX - ADD TO LAST
-=========================== */
-
-@media (max-width: 768px) {
-    
-    .hero-left h2 {
-        font-size: 1.2rem !important;
-        letter-spacing: 0.5px !important;
-        white-space: nowrap !important;
-        overflow: visible !important;
-        padding: 0 10px !important;
-        margin-bottom: 15px !important;
-    }
-
-    .hero-left p {
-        font-size: 0.9rem !important;
-        line-height: 1.8 !important;
-        padding: 0 15px !important;
-        max-width: 100% !important;
-        word-break: keep-all !important;
-        overflow-wrap: break-word !important;
-    }
-
-    .hero-left {
-        padding: 0 20px !important;
-    }
+.contact-info-card {
+    padding: 20px 15px !important;
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 12px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: visible !important;
 }
 
+.contact-info-card h4 {
+    font-size: 1.1rem !important;
+    margin-bottom: 5px !important;
+}
+
+.contact-info-card span {
+    word-break: break-word !important; /* break-all remove panniten */
+    overflow-wrap: break-word !important;
+    font-size: 0.9rem !important;
+    padding: 0 5px !important;
+    max-width: 100% !important;
+    display: inline-block !important;
+}
+
+.icon-box {
+    width: 60px !important;
+    height: 60px !important;
+    margin: 0 auto !important;
+    flex-shrink: 0 !important;
+}
+
+/* 7. Tech Stack / Skills Grid - 2 per row */
+.skills-grid, 
+.tech-stack,
+.achievements-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important; /* 2 per row */
+    gap: 15px !important;
+    padding: 0 15px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.skills-grid .skill-card,
+.tech-stack .tech-card,
+.achievements-grid .achievement-card {
+    width: 100% !important;
+    padding: 20px 15px !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+}
+
+.skills-grid .skill-card img,
+.tech-stack .tech-card img,
+.achievements-grid .achievement-card img {
+    width: 45px !important;
+    height: 45px !important;
+    margin: 0 auto 10px auto !important;
+    display: block !important;
+}
+
+.skills-grid .skill-card h3,
+.tech-stack .tech-card h3 {
+    font-size: 0.95rem !important;
+    margin: 0 !important;
+    word-break: break-word !important;
+}
+
+/* Extra Small 380px - Konjam chinna icon */
 @media (max-width: 380px) {
-    .hero-left h2 {
-        font-size: 1.1rem !important;
-        letter-spacing: 0px !important;
+    .skills-grid,
+    .tech-stack,
+    .achievements-grid {
+        gap: 12px !important;
+        padding: 0 10px !important;
     }
     
-    .hero-left p {
+    .skills-grid .skill-card img,
+    .tech-stack .tech-card img {
+        width: 40px !important;
+        height: 40px !important;
+    }
+    
+    .skills-grid .skill-card h3,
+    .tech-stack .tech-card h3 {
         font-size: 0.85rem !important;
-        padding: 0 10px !important;
     }
 }
-
-/* ===========================
-   GAP + TEXT VISIBILITY FIX
-=========================== */
-
-@media (max-width: 768px) {
-    
-    /* 1. Top padding kurachu - gap fix */
-    body {
-        padding-top: 90px !important;
-    }
-
-    .hero {
-        padding-top: 20px !important;
-        margin-top: 0 !important;
-        min-height: auto !important;
-    }
-
-    /* 2. "Hello, I'm" text hidden fix */
-    .hero-left h3 {
-        font-size: 1rem !important;
-        margin-bottom: 8px !important;
-        margin-top: 0 !important;
-        padding-top: 0 !important;
-        line-height: 1.3 !important;
-        overflow: visible !important;
-    }
-
-    .hero-left h1 {
-        margin-top: 5px !important;
-        margin-bottom: 8px !important;
-    }
-
-    .hero-left h2 {
-        margin-top: 5px !important;
-        margin-bottom: 15px !important;
-    }
-
-    /* 3. Circle kulla image full ah theriyanum */
-    .hero-circle {
-        margin-top: 10px !important;
-    }
 }
 
-@media (max-width: 380px) {
-    body {
-        padding-top: 85px !important;
-    }
-}
-
-
-}
