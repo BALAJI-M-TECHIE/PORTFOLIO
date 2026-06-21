@@ -122,13 +122,6 @@ section {
     }
 }
 
-/* Loader is desktop-only: disabled completely on mobile */
-@media (max-width: 768px) {
-    #loader {
-        display: none !important;
-    }
-}
-
 /* ===========================
    CURSOR
 =========================== */
@@ -2432,24 +2425,6 @@ footer {
     transform: translateY(-4px);
 }
 
-/* Linktree Button */
-.linktree-btn {
-    background: linear-gradient(135deg, #39E09B, #00C76F);
-    color: #ffffff;
-    border: 1px solid rgba(57, 224, 155, 0.4);
-    box-shadow: 0 4px 15px rgba(57, 224, 155, 0.25);
-}
-
-.linktree-btn:hover {
-    transform: translateY(-3px);
-    background: linear-gradient(135deg, #4AF2AC, #00D977);
-    box-shadow: 0 8px 25px rgba(57, 224, 155, 0.4);
-}
-
-.linktree-btn::before {
-    background: rgba(255, 255, 255, 0.15);
-}
-
 /* ==========================================
    CONTACT INFO CARDS - OPTION 2
 ========================================== */
@@ -2635,11 +2610,6 @@ footer {
         gap: 6px 10px !important;
         flex-wrap: wrap !important;
         justify-content: center !important;
-    }
-
-    /* Mobile nav shows only Home, Skills, Projects, Contact */
-    .nav-links .nav-desktop-only {
-        display: none !important;
     }
 
     .nav-links a {

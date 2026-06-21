@@ -1,21 +1,8 @@
 /* ===========================
-   DEVICE CHECK (used by loader + logo timing below)
-=========================== */
-const isMobileDevice = window.matchMedia("(max-width: 768px)").matches;
-
-/* ===========================
-   LOADER (desktop only - disabled on mobile)
+   LOADER
 =========================== */
 window.addEventListener("load", () => {
     const loader = document.getElementById("loader");
-    if (!loader) return;
-
-    if (isMobileDevice) {
-        // Loader is hidden via CSS on mobile already; skip the timers entirely.
-        loader.style.display = "none";
-        return;
-    }
-
     setTimeout(() => {
         loader.style.opacity = "0";
         loader.style.pointerEvents = "none";
@@ -64,10 +51,7 @@ if (logo) {
     }
 
     window.addEventListener('load', () => {
-        // On desktop, start right as the loader fades out (2.5s + fade).
-        // On mobile, the loader is skipped, so start almost immediately
-        // instead of leaving the logo blank for 2.6s.
-        setTimeout(typeWriter, isMobileDevice ? 300 : 2600);
+        setTimeout(typeWriter, 2600);
     });
 }
 
