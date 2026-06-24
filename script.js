@@ -329,3 +329,43 @@ if (typeof particlesJS !== 'undefined') {
 } else {
     console.log("particlesJS not loaded");
 }
+
+// ===== PREMIUM SCROLL SPY =====
+// ===== ACTIVE NAVBAR HIGHLIGHT =====
+// ===== ACTIVE NAVBAR ON SCROLL =====
+
+const navItems = document.querySelectorAll(".nav-links a");
+
+const observer = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+                let id = entry.target.getAttribute("id");
+
+                // Treat Certificates as Achievements
+                if (id === "Certificates") {
+                    id = "Achievements";
+                }
+
+                navItems.forEach((link) => {
+                    link.classList.remove("active");
+
+                    if (link.getAttribute("href") === `#${id}`) {
+                        link.classList.add("active");
+                    }
+                });
+
+            }
+
+        });
+    },
+    {
+        threshold: 0.2
+    }
+);
+
+document.querySelectorAll("section[id]").forEach((section) => {
+    observer.observe(section);
+});

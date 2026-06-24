@@ -2599,6 +2599,8 @@ footer {
    ================================================== */
 
 @media (max-width: 768px) {
+
+     
     
     /* NAVBAR ALWAYS VISIBLE & STICKY ON MOBILE (no more show/hide on scroll) */
     .navbar {
@@ -2607,8 +2609,8 @@ footer {
         left: 50% !important;
         transform: translateX(-50%) !important;
         width: 95% !important;
-        min-height: 80px !important;
-        padding: 12px 15px !important;
+       min-height: 65px !important;
+padding: 10px 15px !important;
         flex-direction: column !important;
         gap: 8px !important;
         border-radius: 20px !important;
@@ -2622,6 +2624,7 @@ footer {
         transition: background 0.4s ease, box-shadow 0.4s ease !important;
         z-index: 9999 !important;
         box-sizing: border-box !important;
+        
     }
 
     .logo {
@@ -2629,12 +2632,14 @@ footer {
         text-align: center !important;
         width: 100% !important;
         min-width: auto !important;
+        
     }
 
     .nav-links {
         gap: 6px 10px !important;
         flex-wrap: wrap !important;
         justify-content: center !important;
+        
     }
 
     /* Mobile nav shows only Home, Skills, Projects, Contact */
@@ -3007,4 +3012,53 @@ footer {
 body {
    /* background: radial-gradient(circle at 20% 50%, #000000 0%, #0a0a0f 100%); */
    background: transparent;
+}
+/* Desktop Active Navigation */
+@media (min-width: 769px) {
+
+    /* ===== PREMIUM ACTIVE NAVBAR ===== */
+
+    .nav-links a {
+        position: relative;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        padding: 8px 12px;
+        border-radius: 10px;
+    }
+
+    /* Active Link */
+    .nav-links a.active {
+        color: #ff69b4;
+        background: rgba(255, 105, 180, 0.12);
+        box-shadow: 0 0 15px rgba(255, 105, 180, 0.15);
+        font-weight: 600;
+        transform: translateY(-2px);
+    }
+
+    /* Animated Underline */
+    .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -6px;
+        width: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #ff69b4, #ff1493);
+        border-radius: 10px;
+        transform: translateX(-50%);
+        transition: width 0.35s ease;
+    }
+
+    .nav-links a.active::after {
+        width: 80%;
+    }
+
+    /* Hover Effect */
+    .nav-links a:hover {
+        color: #ff69b4;
+    }
+
+    .nav-links a:hover::after {
+        width: 80%;
+    }
 }
